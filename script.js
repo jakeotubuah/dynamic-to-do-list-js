@@ -1,12 +1,12 @@
-// Step 1: Setup Event Listener for Page Load
+// Setup Event Listener for Page Load
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Step 2: Select DOM Elements
+    // Select DOM Elements
     const addButton = document.getElementById('add-task-btn');
     const taskInput = document.getElementById('task-input');
     const taskList = document.getElementById('task-list');
 
-    // Step 3: Create the addTask Function
+    //  Create the addTask Function
     function addTask() {
         // Retrieve and trim the value from the input field
         const taskText = taskInput.value.trim();
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Step 4: Task Creation and Removal
+        //  Task Creation and Removal
         // Create a new li element and set its textContent
         const li = document.createElement('li');
         li.textContent = taskText;
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         taskInput.value = "";
     }
 
-    // Step 5: Attach Event Listeners
+    //  Attach Event Listeners
     // Add an event listener to addButton that calls addTask when clicked
     addButton.addEventListener('click', addTask);
 
@@ -53,18 +53,18 @@ document.addEventListener('DOMContentLoaded', function() {
             addTask();
         }
 
-        // Step 1: Setup Event Listener for Page Load
+        //  Setup Event Listener for Page Load
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Step 2: Select DOM Elements
+    //  Select DOM Elements
     const addButton = document.getElementById('add-task-btn');
     const taskInput = document.getElementById('task-input');
     const taskList = document.getElementById('task-list');
 
-    // Step 3: Initialize tasks array
+    // Initialize tasks array
     let tasks = [];
 
-    // Step 4: Load Tasks from Local Storage
+    // Load Tasks from Local Storage
     function loadTasks() {
         const storedTasks = localStorage.getItem('tasks');
         if (storedTasks) {
@@ -75,12 +75,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Step 5: Save Tasks to Local Storage
+    // Save Tasks to Local Storage
     function saveTasks() {
         localStorage.setItem('tasks', JSON.stringify(tasks));
     }
 
-    // Step 6: Create Task Element (used by addTask and loadTasks)
+    // Create Task Element (used by addTask and loadTasks)
     function createTaskElement(taskText) {
         // Create a new li element and set its textContent
         const li = document.createElement('li');
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
         taskList.appendChild(li);
     }
 
-    // Step 7: Create the addTask Function
+    // Create the addTask Function
     function addTask() {
         const taskText = taskInput.value.trim();
 
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
         taskInput.value = "";
     }
 
-    // Step 8: Attach Event Listeners
+    // Attach Event Listeners
     addButton.addEventListener('click', addTask);
 
     taskInput.addEventListener('keypress', function(event) {
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Step 9: Initialize - Load existing tasks from Local Storage
+    // Initialize - Load existing tasks from Local Storage
     loadTasks();
 });
 
